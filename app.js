@@ -57,7 +57,7 @@ app.post("/country", function(req, res) {
         "hostname": "covid-19-data.p.rapidapi.com",
         "path": `/country?name=${countryName}`,
         "headers": {
-            "x-rapidapi-key": "9a4ea37d90msh4683fe1cf1d94adp16e36fjsn7ebcedab2e0d",
+            "x-rapidapi-key": process.env.API_KEY,
             "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
             "useQueryString": true
         }
