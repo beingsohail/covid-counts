@@ -1,0 +1,109 @@
+
+
+* {
+    margin: 0%;
+}
+
+body {
+    background-color: lavenderblush;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+@mixin flex-row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+
+.navbar, .sidebar, .links-div {
+    @include flex-row();
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar {
+    background-color: black;
+    color: white;
+    padding: 1em;
+}
+
+.sidebar {
+    width: 60%;
+}
+
+.links-div {
+    p {
+        margin-right: 1em;
+        a {
+            color: white;
+            text-decoration: none;
+            &:hover {
+                color: teal;
+            }
+        }
+    }
+}
+
+.search-div {
+    form {
+        @include flex-row();
+        input {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+
+        .btn {
+            background-color: cornflowerblue;
+            color: honeydew;
+            font-weight: bolder;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 5px 10px;
+            margin: 0% 5px;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+
+.main {
+    margin-top: 5%;
+    position: relative;
+
+    div {
+        margin: 2em auto;
+    }
+}
+
+table {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid;
+
+    thead {
+        td {
+            border-bottom: 1px solid black;
+            color: teal;
+            font-weight: bolder;
+        }
+    }
+
+    td {
+        padding: 10px;
+    }
+}
